@@ -28,7 +28,7 @@ app.get('/', authMiddleware.requireAuth, (req, res) => res.render('index', {name
 app.get('/logout', (req, res) => res.clearCookie('userId').clearCookie('sessionId').redirect('/auth/login'));
 app.use('/users', userRoute);
 app.use('/products', productRoute);
-app.use('/cart', authMiddleware.requireAuth, cartRoute);
+app.use('/cart', authMiddleware.requireAuth, sessionMiddleware.generateSession, cartRoute);
 app.use('/', authRoute);
 app.use('/transfer', csrfProtection ,authMiddleware.requireAuth, transferRoute);
 
