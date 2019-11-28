@@ -16,7 +16,7 @@ const mongoose = require('mongoose');
 app.set('view engine', 'pug');
 app.set('views', './views');
 
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
 app.use(cookieParser(process.env.SESSION_SECRET));
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
