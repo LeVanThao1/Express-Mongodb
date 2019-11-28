@@ -17,7 +17,7 @@ const getPage = (req, res) => {
     res.render('products/add');
 }
 
-const addProduct = async (req, res) => {
+const addProduct = async (req, res, next) => {
     try {
         const product = req.body;
         product.image = req.file.path.split('\\').slice(1).join('/');

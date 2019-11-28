@@ -3,7 +3,7 @@ const User = require('../models/user.model')
 
 const login = (req, res) => res.render('login');
 
-const checkLogin = async (req, res) => {
+const checkLogin = async (req, res, next) => {
     try {
         const email = req.body.email;
         const user = await User.findOne({ email }).lean();

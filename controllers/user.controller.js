@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt-nodejs');
 const User = require('../models/user.model');
 
-const index = async (req, res) => {
+const index = async (req, res, next) => {
     try {
         const users = await User.find().lean();
         return res.render('users/index', { users })
@@ -13,7 +13,7 @@ const index = async (req, res) => {
 
 const create = (req, res) => res.render('users/create');
 
-const search = async (req, res) => {
+const search = async (req, res, next) => {
     try {
         const username = req.query.username;
         const matchedUsers = await User.find().lean() 
@@ -25,7 +25,7 @@ const search = async (req, res) => {
     
 };
 
-const postCreate = async (req, res) => {
+const postCreate = async (req, res, next) => {
     try {
         const salt = bcrypt.genSaltSync('10');
         const data = {
@@ -43,7 +43,7 @@ const postCreate = async (req, res) => {
     
 };
 
-const getUser = async (req, res) => {
+const getUser = async (req, res, next) => {
     try {
         const id = req.params.id;
         const user = await User.findOne({ _id: id }).lean();
