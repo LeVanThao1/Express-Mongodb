@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const csurf = require('csurf');
-const port = 3001;
+const port = process.env.PORT || 3000;
 const userRoute = require('./routes/user.route');
 const productRoute = require('./routes/product.route');
 const cookieParser = require('cookie-parser');
