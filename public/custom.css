@@ -1,0 +1,90 @@
+
+p.card-text {
+    white-space: nowrap ;
+    text-overflow: ellipsis ;
+    overflow: hidden ;
+    height: 36px ; 
+}
+.card-title {
+    white-space: nowrap ;
+    text-overflow: ellipsis ;
+    overflow: hidden ;
+    width: 13.5rem ;
+    height: 25px ;
+}
+.card-img-top {
+    height: 200px;
+}
+a.btn {
+    padding: 8px 15px !important;
+}
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: darkred;
+}
+
+.current > a {
+    background: red !important;
+    color: white !important;
+    /* height: 20px !important; */
+}
+
+/* css cart */
+    .table {
+        vertical-align: middle;
+    }
+    .fot {
+        font-size: 18px !important;
+        /* color: white !important; */
+        height: 40px !important;
+    }
+@media screen and (max-width: 600px) { 
+    table#cart tbody td .form-control { 
+        width: 20%; 
+        display: inline !important;
+    } 
+    
+    .actions .btn { 
+        width:36%; 
+        margin:1.5em 0;
+    } 
+    
+        .actions .btn-info { 
+        float:left;
+    } 
+    
+        .actions .btn-danger { 
+        float:right;
+    } 
+    
+    table#cart thead {
+        display: none;
+    } 
+    
+    table#cart tbody td {
+        display: block;
+        padding: .6rem;
+        min-width:320px;
+    } 
+    
+    table#cart tbody tr td:first-child {
+        background: #333;
+        color: #fff;
+    } 
+    
+    table#cart tbody td:before { 
+        content: attr(data-th);
+        font-weight: bold; 
+        display: inline-block;
+        width: 8rem;
+    } 
+    
+    table#cart tfoot td {
+        display:block;
+    } 
+    table#cart tfoot td .btn {
+        display:block;
+    }
+    
+}
