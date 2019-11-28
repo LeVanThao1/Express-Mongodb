@@ -11,13 +11,14 @@ const generateSession = async (req, res, next) => {
                 res.cookie('sessionId', getSession._id, { signed: true });
             }
             next();
-        }
-        const session = await Session.findOne({ _id: req.signedCookies.sessionId }).lean();
-        if (!session) {
-            res.redirect('/auth/login');
-            return;
-        }
-        next();
+        } else {
+            const session = await Session.findOne({ _id: req.signedCookies.sessionId }).lean();
+            if (!session) {
+                res.redirect('/auth/login');
+                return;
+            }
+            next();
+        }   
     } catch (e) {
         next(e);
     } 
