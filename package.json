@@ -1,7 +1,6 @@
 {
   "name": "bai6-lowdb",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
@@ -19,5 +18,14 @@
     "lowdb": "^1.0.0",
     "md5": "^2.2.1",
     "shortid": "^2.2.15"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeVanThao1/Express-Mongodb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LeVanThao1/Express-Mongodb/issues"
+  },
+  "homepage": "https://github.com/LeVanThao1/Express-Mongodb#readme",
+  "description": ""
 }
